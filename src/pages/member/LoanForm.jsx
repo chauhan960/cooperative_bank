@@ -107,41 +107,6 @@ const LoanForm = () => {
           Submit Loan Request
         </Button>
       </form>
-
-      {/* Submitted Loans Table */}
-      <Typography variant="h6" sx={{ mt: 4 }}>📄 Submitted Loans</Typography>
-      <TableContainer component={Paper} sx={{ mt: 2 }}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Loan ID</TableCell>
-              <TableCell>Product</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Tenure</TableCell>
-              <TableCell>Interest</TableCell>
-              <TableCell>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {loans.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={6} align="center">No loans submitted yet.</TableCell>
-              </TableRow>
-            ) : (
-              loans.map((loan) => (
-                <TableRow key={loan.loanId}>
-                  <TableCell>{loan.loanId}</TableCell>
-                  <TableCell>{loan.product}</TableCell>
-                  <TableCell>₹{loan.amount}</TableCell>
-                  <TableCell>{loan.tenure} months</TableCell>
-                  <TableCell>{loan.interest}%</TableCell>
-                  <TableCell>{loan.status}</TableCell>
-                </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
-      </TableContainer>
     </Box>
   );
 };
